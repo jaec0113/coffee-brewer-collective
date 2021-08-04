@@ -2,15 +2,14 @@ import Link from "next/link"
 
 export default function Navbar() {
   return (
-    <div>
-      <nav>
+    <header className='bg-gray-800'>
+      <nav className='text-white container mx-auto flex flex-wrap p-5 flex-row md:flex-row items-center justify-between'>
         <Link href='/brewmethods'>
           <a>Brew Methods</a>
         </Link>
         <Link href='/about'>
           <a>About</a>
         </Link>
-
         <Link href='/login'>
           <a>Login</a>
         </Link>
@@ -18,6 +17,6 @@ export default function Navbar() {
           <a>Register</a>
         </Link>
       </nav>
-    </div>
+    </header>
   )
 }

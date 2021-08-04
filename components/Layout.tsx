@@ -19,6 +19,7 @@ export default function Layout({ children }: Props) {
           content='Popular coffee brewing recipes from coffee professionals all over the world'
         />
       </Head>
+      <Navbar />
       <main className='container mx-auto my-7'>{children}</main>
     </div>
   )
