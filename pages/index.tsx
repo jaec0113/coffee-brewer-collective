@@ -9,28 +9,32 @@ export default function Home({}) {
       key: 1,
       name: "Pour Over",
       image: "/kalita-tsubame.jpg",
+      url: "/pour-over",
     },
     {
       key: 2,
       name: "Aeropress",
       image: "/aeropress.jpg",
+      url: "/aeropress",
     },
     {
       key: 3,
       name: "French Press",
       image: "/french-press.jpg",
+      url: "/french-press",
     },
     {
       key: 4,
       name: "Syphon",
       image: "/siphon.jpg",
+      url: "/syphon",
     },
   ])
 
   return (
     <Layout>
       <Head>
-        <title>Coffee Brewer Collective</title>
+        <title>Coffee Brewing Collective</title>
         <meta
           name='description'
           content='A collection of popular coffee brewing recipes by coffee professionals from all over the world.'
@@ -41,8 +45,8 @@ export default function Home({}) {
         Coffee Brewing Collective
       </h1>
       <div>
-        {brewMethods.map(({ key, name, image }) => (
-          <HomeCard key={key} name={name} image={image} />
+        {brewMethods.map(({ key, name, image, url }) => (
+          <HomeCard key={key} name={name} image={image} url={url} />
         ))}
       </div>
     </Layout>

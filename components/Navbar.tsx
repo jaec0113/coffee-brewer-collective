@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <header className='bg-gray-800'>
       <nav className='text-white container mx-auto flex flex-wrap p-5 flex-row md:flex-row items-center justify-between'>
-        <Link href='/brewmethods'>
+        <Link href='/'>
           <a>Brew Methods</a>
         </Link>
         <Link href='/about'>
