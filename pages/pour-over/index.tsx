@@ -3,6 +3,16 @@ import Head from "next/head"
 import Layout from "../../components/Layout"
 import IndividualCard from "../../components/IndividualCard"
 
+interface IndividCardProps {
+  recipe: string
+  creator: string
+  company: string
+  brewer: string
+  hashtags: string
+  rating: number
+  slug: string
+}
+
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(`http://localhost:1337/pourovers`)
   const recipes = await res.json()
@@ -31,7 +41,15 @@ export default function index({ recipes }: any) {
         Pour Over Brew Methods Main Page
       </h1>
       {recipes.map(
-        ({ recipe, creator, company, brewer, hashtags, rating }: any) => (
+        ({
+          recipe,
+          creator,
+          company,
+          brewer,
+          hashtags,
+          rating,
+          slug,
+        }: IndividCardProps) => (
           <IndividualCard
             key={recipe}
             recipe={recipe}
@@ -40,6 +58,7 @@ export default function index({ recipes }: any) {
             brewer={brewer}
             hashtags={hashtags}
             rating={rating}
+            slug={slug}
           />
         )
       )}
