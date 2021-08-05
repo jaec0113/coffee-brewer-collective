@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Layout from "../../components/Layout"
 import IndividualCard from "../../components/IndividualCard"
+import RecipeCard from "../../components/RecipeCard"
 
 export default function index() {
   return (
@@ -17,6 +18,7 @@ export default function index() {
         AeroPress Brew Methods Main Page
       </h1>
       <IndividualCard />
+      <RecipeCard />
     </Layout>
   )
 }

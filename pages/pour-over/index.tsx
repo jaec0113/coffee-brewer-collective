@@ -1,8 +1,19 @@
+import { GetStaticProps } from "next"
 import Head from "next/head"
 import Layout from "../../components/Layout"
 import IndividualCard from "../../components/IndividualCard"
 
-export default function index() {
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch(`http://localhost:1337/pourovers`)
+  const recipes = await res.json()
+
+  return {
+    props: { recipes },
+    revalidate: 1,
+  }
+}
+
+export default function index({ recipes }: any) {
   return (
     <Layout>
       <Head>
@@ -19,7 +30,19 @@ export default function index() {
       <h1 className='text-center font-bold text-3xl'>
         Pour Over Brew Methods Main Page
       </h1>
-      <IndividualCard />
+      {recipes.map(
+        ({ recipe, creator, company, brewer, hashtags, rating }: any) => (
+          <IndividualCard
+            key={recipe}
+            recipe={recipe}
+            creator={creator}
+            company={company}
+            brewer={brewer}
+            hashtags={hashtags}
+            rating={rating}
+          />
+        )
+      )}
     </Layout>
   )
 }
