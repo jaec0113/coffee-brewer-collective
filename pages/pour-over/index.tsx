@@ -11,6 +11,7 @@ interface IndividCardProps {
   hashtags: string
   rating: number
   slug: string
+  type: string
 }
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -49,6 +50,7 @@ export default function index({ recipes }: any) {
           hashtags,
           rating,
           slug,
+          type,
         }: IndividCardProps) => (
           <IndividualCard
             key={recipe}
@@ -59,6 +61,7 @@ export default function index({ recipes }: any) {
             hashtags={hashtags}
             rating={rating}
             slug={slug}
+            type={type}
           />
         )
       )}

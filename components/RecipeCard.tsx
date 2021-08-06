@@ -24,41 +24,47 @@ export default function RecipeCard({ recipe }: any) {
       <div className='flex w-full'>
         <Image src='/test.png' height={250} width={250} />
         <div className='flex flex-col text-right justify-around w-3/4'>
-          <h1 className='text-2xl'>{recipe.recipe}</h1>
-          <p>{recipe.creator}</p>
-          <p>{recipe.company}</p>
+          <h1 className='text-2xl font-bold'>{recipe.recipe}</h1>
+          <p className='font-semibold'>{recipe.creator}</p>
+          <p className='font-semibold'>{recipe.company}</p>
         </div>
       </div>
       <div className='my-5'>
         <p className='my-1'>
-          Coffee: <span>{recipe.coffeeAmount}</span>
+          <span className='font-bold'>Coffee: </span>
+          {recipe.coffeeAmount}
         </p>
         <p className='my-1'>
-          Water: <span>{recipe.waterAmount}</span>
+          <span className='font-bold'>Water: </span>
+          {recipe.waterAmount}
         </p>
         <p className='my-1'>
-          Ratio: <span>{recipe.ratio}</span>
+          <span className='font-bold'>Ratio: </span>
+          {recipe.ratio}
         </p>
         <p className='my-1'>
-          Water Temperature: <span>{recipe.waterTemperature}</span>
+          <span className='font-bold'>Water Temperature: </span>
+          {recipe.waterTemperature}
         </p>
         <p className='my-1'>
-          Grind Size: <span>{recipe.grindSize}</span>
+          <span className='font-bold'>Grind Size: </span>
+          {recipe.grindSize}
         </p>
         <p className='my-1'>
-          Brewer: <span>{recipe.brewer}</span>
+          <span className='font-bold'>Brewer: </span>
+          {recipe.brewer}
         </p>
       </div>
       <div className='mb-5'>
-        <h2>Brew Recipe</h2>
-        <p>{recipe.brewMethod}</p>
+        <h2 className='font-bold'>Brew Recipe</h2>
+        {recipe.brewMethod}
       </div>
       <div>
-        <h3 className='my-2'>Notes</h3>
+        <h3 className='my-2 font-bold'>Notes</h3>
         <p>{recipe.notes}</p>
-        <h3 className='my-2'>Links</h3>
+        <h3 className='my-2 font-bold'>Links</h3>
         <p>{recipe.links}</p>
-        <h3 className='my-2'>Rating</h3>
+        <h3 className='my-2 font-bold'>Rating</h3>
         <p>{recipe.rating}</p>
         <p className='text-blue-600'>{recipe.hashtags}</p>
       </div>

@@ -9,6 +9,7 @@ interface IndividCardProps {
   hashtags: string
   rating: number
   slug: string
+  type: string
 }
 
 export default function IndividualCard({
@@ -19,6 +20,7 @@ export default function IndividualCard({
   hashtags,
   rating,
   slug,
+  type,
 }: IndividCardProps) {
   return (
     <div className='flex px-10 py-6 rounded-lg shadow-md mt-6'>
@@ -30,7 +32,7 @@ export default function IndividualCard({
         <p>{brewer}</p>
         <p>{hashtags}</p>
         <p>Rating: {rating}</p>
-        <Link href={`/pour-over/${slug}`}>
+        <Link href={`/${type}/${slug}`}>
           <a className='text-red-500'>See Recipe</a>
         </Link>
       </div>
