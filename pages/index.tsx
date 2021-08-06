@@ -36,6 +36,10 @@ export default function Home({}) {
       <Head>
         <title>Coffee Brewing Collective</title>
         <meta
+          name='keywords'
+          content='coffee, brewing, pour over, hand drip, filter, aeropress, french press, syphon, siphon, vacuum coffee, recipes, brew designs'
+        />
+        <meta
           name='description'
           content='A collection of popular coffee brewing recipes by coffee professionals from all over the world.'
         />

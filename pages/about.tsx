@@ -59,6 +59,9 @@ export default function about() {
           rate and leave reviews for different brewing recipes so others can
           benefit from your experiences.
         </p>
+        <a href='/account/register'>
+          <EmailButton text='Register' />
+        </a>
 
         <h2 className='text-xl font-bold my-2'>Contact</h2>
         <p className='font-light my-1'>
@@ -72,7 +75,7 @@ export default function about() {
           feedback is welcome!
         </p>
       </div>
-      <div className='flex flex-col justify-center items-center'>
+      <div className='flex flex-col ml-3'>
         <a href='mailto:coffeeaje0113@gmail.com?subject=Brewing%20Recipe%20Submission'>
           <EmailButton text='Submit a Recipe' />
         </a>

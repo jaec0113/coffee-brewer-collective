@@ -10,10 +10,10 @@ export default function Navbar() {
         <Link href='/about'>
           <a>About</a>
         </Link>
-        <Link href='/login'>
+        <Link href='/account/login'>
           <a>Login</a>
         </Link>
-        <Link href='/register'>
+        <Link href='/account/register'>
           <a>Register</a>
         </Link>
       </nav>
