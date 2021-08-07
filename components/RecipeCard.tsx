@@ -1,4 +1,5 @@
 import Image from "next/image"
+import ReactMarkdown from "react-markdown"
 
 interface PourOverTypes {
   recipe: string
@@ -57,13 +58,13 @@ export default function RecipeCard({ recipe }: any) {
       </div>
       <div className='mb-5'>
         <h2 className='font-bold'>Brew Recipe</h2>
-        {recipe.brewMethod}
+        <ReactMarkdown>{recipe.brewMethod}</ReactMarkdown>
       </div>
       <div>
         <h3 className='my-2 font-bold'>Notes</h3>
-        <p>{recipe.notes}</p>
+        <ReactMarkdown>{recipe.notes}</ReactMarkdown>
         <h3 className='my-2 font-bold'>Links</h3>
-        <p>{recipe.links}</p>
+        <ReactMarkdown>{recipe.links}</ReactMarkdown>
         <h3 className='my-2 font-bold'>Rating</h3>
         <p>{recipe.rating}</p>
         <p className='text-blue-600'>{recipe.hashtags}</p>

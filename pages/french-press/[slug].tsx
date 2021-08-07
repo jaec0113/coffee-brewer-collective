@@ -1,7 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from "next"
+import Link from "next/link"
 import { ParsedUrlQuery } from "querystring"
 import Layout from "../../components/Layout"
 import RecipeCard from "../../components/RecipeCard"
+import { StandardButton } from "../../components/Buttons"
 
 interface IParams extends ParsedUrlQuery {
   slug: string
@@ -55,6 +57,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export default function PourOverRecipe({ recipe }: PourOverTypes) {
   return (
     <Layout>
+      <Link href='/french-press'>
+        <a>
+          <StandardButton text='See All French Press Recipes' />
+        </a>
+      </Link>
       <RecipeCard key={recipe} recipe={recipe} />
     </Layout>
   )

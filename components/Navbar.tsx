@@ -24,7 +24,6 @@ export default function Navbar() {
             >
               Logout
             </button>
-            )
           </>
         ) : (
           <>

@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Layout from "../components/Layout"
-import { EmailButton } from "../components/Buttons"
+import { StandardButton } from "../components/Buttons"
 
 export default function about() {
   return (
@@ -60,7 +60,7 @@ export default function about() {
           benefit from your experiences.
         </p>
         <a href='/account/register'>
-          <EmailButton text='Register' />
+          <StandardButton text='Register' />
         </a>
 
         <h2 className='text-xl font-bold my-2'>Contact</h2>
@@ -77,10 +77,10 @@ export default function about() {
       </div>
       <div className='flex flex-col ml-3'>
         <a href='mailto:coffeeaje0113@gmail.com?subject=Brewing%20Recipe%20Submission'>
-          <EmailButton text='Submit a Recipe' />
+          <StandardButton text='Submit a Recipe' />
         </a>
         <a href='mailto:coffeeaje0113@gmail.com?subject=Coffee%20Brewing%20Question'>
-          <EmailButton text='Email Us' />
+          <StandardButton text='Email Us' />
         </a>
       </div>
     </Layout>
