@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Head from "next/head"
-import Layout from "../components/Layout"
-import HomeCard from "../components/HomeCard"
+import Layout from "@/components/Layout"
+import HomeCard from "@/components/HomeCard"
 
 export default function Home({}) {
   const [brewMethods, setBrewMethods] = useState([

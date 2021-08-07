@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next"
 import Head from "next/head"
-import Layout from "../../components/Layout"
-import IndividualCard from "../../components/IndividualCard"
+import Layout from "@/components/Layout"
+import IndividualCard from "@/components/IndividualCard"
 
 interface IndividCardProps {
   recipe: string

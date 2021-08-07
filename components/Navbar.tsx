@@ -1,6 +1,9 @@
+import { useContext } from "react"
 import Link from "next/link"
+import AuthContext from "@/context/AuthContext"
 
 export default function Navbar() {
+  // const {user, logout} = useContext(AuthContext)
   return (
     <header className='bg-gray-800'>
       <nav className='text-white container mx-auto flex flex-wrap p-5 flex-row md:flex-row items-center justify-between'>
