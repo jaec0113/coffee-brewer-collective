@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 import { ParsedUrlQuery } from "querystring"
-import Layout from "@/components/Layout"
-import RecipeCard from "@/components/RecipeCard"
+import Layout from "../../components/Layout"
+import RecipeCard from "../../components/RecipeCard"
 
 interface IParams extends ParsedUrlQuery {
   slug: string

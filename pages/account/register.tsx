@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Link from "next/link"
 import Head from "next/head"
-import Layout from "@/components/Layout"
+import Layout from "../../components/Layout"
 
 export default function Register() {
   const [email, setEmail] = useState("")

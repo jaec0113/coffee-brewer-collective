@@ -1,6 +1,6 @@
 import Head from "next/head"
-import Layout from "@/components/Layout"
-import { EmailButton } from "@/components/Buttons"
+import Layout from "../components/Layout"
+import { EmailButton } from "../components/Buttons"
 
 export default function about() {
   return (

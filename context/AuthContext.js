@@ -4,7 +4,7 @@ import { useRouter } from "next/router"
 const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({ name: "Jae" })
   const [error, setError] = useState(null)
 
   // Register User
