@@ -4,12 +4,40 @@ import AuthContext from "../context/AuthContext"
 
 export default function Navbar() {
   const { user, logout } = useContext(AuthContext)
+
   return (
     <header className='bg-gray-800'>
       <nav className='text-white container mx-auto flex flex-wrap p-5 flex-row md:flex-row items-center justify-between'>
-        <Link href='/'>
+        <div className='relative group'>
           <a>Brew Methods</a>
-        </Link>
+          <div className='absolute bg-gray-800 text-white py-4 pl-2 pr-10 z-10 hidden group-hover:block'>
+            <Link href='/'>
+              <a className='my-2 w-max group-hover:block hover:text-yellow-300'>
+                All Recipes
+              </a>
+            </Link>
+            <Link href='/pour-over'>
+              <a className='my-2 w-max group-hover:block hover:text-yellow-300'>
+                Pour Over
+              </a>
+            </Link>
+            <Link href='/aeropress'>
+              <a className='my-2 w-max group-hover:block hover:text-yellow-300'>
+                Aeropress
+              </a>
+            </Link>
+            <Link href='/french-press'>
+              <a className='my-2 w-max group-hover:block hover:text-yellow-300'>
+                French Press
+              </a>
+            </Link>
+            <Link href='/syphon'>
+              <a className='my-2 w-max group-hover:block hover:text-yellow-300'>
+                Syphon
+              </a>
+            </Link>
+          </div>
+        </div>
         <Link href='/about'>
           <a>About</a>
         </Link>
