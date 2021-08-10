@@ -1,7 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import Link from "next/link"
 import Head from "next/head"
+import { toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import Layout from "../../components/Layout"
+import AuthContext from "../../context/AuthContext"
 
 export default function Register() {
   const [email, setEmail] = useState("")
@@ -9,9 +12,18 @@ export default function Register() {
   const [username, setUsername] = useState("")
   const [passwordConfirm, setPasswordConfirm] = useState("")
 
+  const { register, error } = useContext(AuthContext)
+
+  useEffect(() => error && toast.error(error))
+
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault()
-    console.log("registration submitted")
+
+    if (password !== passwordConfirm) {
+      toast.error("Passwords do not match!")
+      return
+    }
+    register({ username, email, password })
   }
 
   return (

@@ -1,15 +1,22 @@
-import React, { useState } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import Link from "next/link"
 import Head from "next/head"
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import Layout from "../../components/Layout"
+import AuthContext from "../../context/AuthContext"
 
 export default function login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  const { login, error } = useContext(AuthContext)
+
+  useEffect(() => error && toast.error(error))
+
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault()
-    console.log("Logged In")
+    login({ email, password })
   }
 
   return (
@@ -25,6 +32,7 @@ export default function login() {
           content='Login to your Coffee Brewing Collective account to access your favorite recipes.'
         />
       </Head>
+      <ToastContainer />
       <form onSubmit={handleSubmit}>
         <div className='text-3xl ml-3 font-bold text-center'>
           <h1>Login</h1>

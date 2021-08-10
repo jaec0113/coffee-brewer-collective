@@ -4,6 +4,7 @@ import { ParsedUrlQuery } from "querystring"
 import Layout from "../../components/Layout"
 import RecipeCard from "../../components/RecipeCard"
 import { StandardButton } from "../../components/Buttons"
+import { API_URL } from "../../config/index"
 
 interface IParams extends ParsedUrlQuery {
   slug: string
@@ -28,7 +29,7 @@ interface PourOverTypes {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch("http://localhost:1337/syphons/")
+  const res = await fetch(`http://${API_URL}/syphons/`)
   const recipes = await res.json()
 
   const paths = recipes.map((recipe: any) => ({
@@ -43,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams
-  const res = await fetch(`http://localhost:1337/syphons/?slug=${slug}`)
+  const res = await fetch(`http://${API_URL}/syphons/?slug=${slug}`)
   const recipes = await res.json()
 
   return {
