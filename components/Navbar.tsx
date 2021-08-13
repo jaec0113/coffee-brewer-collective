@@ -13,7 +13,7 @@ export default function Navbar() {
           <div className='absolute bg-gray-800 text-white py-4 pl-2 pr-10 z-10 hidden group-hover:block'>
             <Link href='/'>
               <a className='my-2 w-max group-hover:block hover:text-yellow-300'>
-                All Recipes
+                Home Page
               </a>
             </Link>
             <Link href='/pour-over'>

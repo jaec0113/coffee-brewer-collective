@@ -2,6 +2,8 @@ import { GetStaticProps } from "next"
 import Head from "next/head"
 import Layout from "../../components/Layout"
 import IndividualCard from "../../components/IndividualCard"
+import Search from "../../components/search"
+import { API_URL } from "../../config/index"
 
 interface IndividCardProps {
   recipe: string
@@ -15,7 +17,7 @@ interface IndividCardProps {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`http://localhost:1337/syphons`)
+  const res = await fetch(`${API_URL}/syphons`)
   const recipes = await res.json()
 
   return {
@@ -41,6 +43,7 @@ export default function index({ recipes }: any) {
       <h1 className='text-center font-bold text-3xl'>
         Syphon Brew Methods Main Page
       </h1>
+      <Search type='syphon' />
       {recipes.map(
         ({
           recipe,

@@ -29,7 +29,7 @@ interface PourOverTypes {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(`http://${API_URL}/pourovers/`)
+  const res = await fetch(`${API_URL}/pourovers/`)
   const recipes = await res.json()
 
   const paths = recipes.map((recipe: any) => ({
@@ -44,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams
-  const res = await fetch(`http://${API_URL}/pourovers/?slug=${slug}`)
+  const res = await fetch(`${API_URL}/pourovers/?slug=${slug}`)
   const recipes = await res.json()
 
   return {
