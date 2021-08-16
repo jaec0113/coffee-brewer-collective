@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import Link from "next/link"
 import Head from "next/head"
-import { toast } from "react-toastify"
+import { toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import Layout from "../../components/Layout"
 import AuthContext from "../../context/AuthContext"
@@ -42,6 +42,7 @@ export default function Register() {
       <div className='text-3xl ml-3 font-bold text-center'>
         <h1>Register</h1>
       </div>
+      <ToastContainer />
       <form onSubmit={handleSubmit}>
         <div className='mt-8 max-w-md'>
           <div className='grid grid-cols-1 gap-6 mx-3'>

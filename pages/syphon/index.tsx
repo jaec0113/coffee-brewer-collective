@@ -1,9 +1,10 @@
-import { GetStaticProps } from "next"
+import { GetServerSideProps } from "next"
 import Head from "next/head"
 import Layout from "../../components/Layout"
 import IndividualCard from "../../components/IndividualCard"
 import Search from "../../components/search"
-import { API_URL } from "../../config/index"
+import Pagination from "../../components/Pagination"
+import { API_URL, PER_PAGE } from "../../config/index"
 
 interface IndividCardProps {
   recipe: string
@@ -16,17 +17,25 @@ interface IndividCardProps {
   type: string
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`${API_URL}/syphons`)
-  const recipes = await res.json()
+export const getServerSideProps: GetServerSideProps = async ({
+  query: { page = 1 },
+}) => {
+  const start = +page === 1 ? 0 : (+page - 1) * PER_PAGE
+
+  const totalRes = await fetch(`${API_URL}/syphons/count`)
+  const total = await totalRes.json()
+
+  const syphonRes = await fetch(
+    `${API_URL}/syphons?_limit=${PER_PAGE}&_start=${start}`
+  )
+  const recipes = await syphonRes.json()
 
   return {
-    props: { recipes },
-    revalidate: 1,
+    props: { recipes, page: +page, total },
   }
 }
 
-export default function index({ recipes }: any) {
+export default function index({ recipes, page, total }: any) {
   return (
     <Layout>
       <Head>
@@ -68,6 +77,7 @@ export default function index({ recipes }: any) {
           />
         )
       )}
+      <Pagination page={page} total={total} type='syphon' />
     </Layout>
   )
 }

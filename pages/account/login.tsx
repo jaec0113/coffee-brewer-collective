@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react"
 import Link from "next/link"
 import Head from "next/head"
+import { useRouter } from "next/router"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import Layout from "../../components/Layout"
@@ -11,12 +12,14 @@ export default function login() {
   const [password, setPassword] = useState("")
 
   const { login, error } = useContext(AuthContext)
+  const router = useRouter()
 
   useEffect(() => error && toast.error(error))
 
   const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>): void => {
     e.preventDefault()
     login({ email, password })
+    router.push("/account/dashboard")
   }
 
   return (

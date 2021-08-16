@@ -19,11 +19,7 @@ export const AuthProvider = ({ children }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        username,
-        email,
-        password,
-      }),
+      body: JSON.stringify(user),
     })
 
     const data = await res.json()
@@ -79,7 +75,6 @@ export const AuthProvider = ({ children }) => {
 
     if (res.ok) {
       setUser(data.user)
-      router.push("/account/dashboard")
     } else {
       setUser(null)
     }

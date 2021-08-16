@@ -13,7 +13,7 @@ export default function Card({ name, image, url }: PropTypes) {
       <div className='text-center'>
         <div className='cursor-pointer'>
           <Link href={url} passHref>
-            <Image src={image} height={200} width={200} />
+            <Image src={image} height={400} width={400} />
           </Link>
         </div>
 

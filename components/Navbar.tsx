@@ -44,7 +44,7 @@ export default function Navbar() {
         {user ? (
           <>
             <Link href='/account/dashboard'>
-              <a>{`${user.name}'s Page`}</a>
+              <a>{`${user.username}'s Page`}</a>
             </Link>
             <button
               onClick={() => logout()}
